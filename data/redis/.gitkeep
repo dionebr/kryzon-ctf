@@ -1,0 +1,7 @@
+# Redis Data Volume
+# This directory will contain Redis persistence files (if enabled)
+# It's mounted as a volume in the Redis container
+
+# Keep this directory in git but ignore the actual data files
+*
+!.gitkeep

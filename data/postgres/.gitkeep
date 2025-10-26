@@ -1,0 +1,7 @@
+# PostgreSQL Data Volume
+# This directory will contain PostgreSQL database files
+# It's mounted as a volume in the PostgreSQL container
+
+# Keep this directory in git but ignore the actual data files
+*
+!.gitkeep

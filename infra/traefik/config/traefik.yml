@@ -1,0 +1,36 @@
+# Traefik static configuration
+global:
+  checkNewVersion: false
+  sendAnonymousUsage: false
+
+api:
+  dashboard: true
+  debug: true
+
+entryPoints:
+  web:
+    address: ":80"
+  traefik:
+    address: ":8080"
+
+providers:
+  docker:
+    endpoint: "unix:///var/run/docker.sock"
+    exposedByDefault: false
+    network: "kryzon_default"
+  file:
+    filename: /etc/traefik/dynamic.yml
+    watch: true
+
+log:
+  level: INFO
+
+accessLog: {}
+
+certificatesResolvers:
+  letsencrypt:
+    acme:
+      email: admin@ctf.local
+      storage: /data/acme.json
+      httpChallenge:
+        entryPoint: web

@@ -1,0 +1,5 @@
+# Nginx Proxy Logs
+# Access and error logs from nginx reverse proxy
+
+*
+!.gitkeep

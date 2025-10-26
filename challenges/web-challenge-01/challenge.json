@@ -1,0 +1,25 @@
+{
+  "name": "Shadowmere",
+  "slug": "shadowmere",
+  "difficulty": "easy",
+  "category": "web",
+  "points": 100,
+  "description": "Um desenvolvedor novato criou um sistema de login para uma loja de artefatos mágicos. Será que você consegue encontrar uma forma de burlar a autenticação e acessar a área administrativa?",
+  "image_tag": "kryzon/shadowmere:latest",
+  "port": 80,
+  "flag": "KRYZON{sh4dow_sqli_byp4ss_m4st3r}",
+  "author": "Kryzon Team",
+  "hints": [
+    "SQL Injection é uma vulnerabilidade comum em formulários de login",
+    "Nem sempre é necessário conhecer uma senha válida",
+    "Tente usar ' OR '1'='1' -- como payload"
+  ],
+  "technologies": ["PHP", "MySQL", "Apache"],
+  "learning_objectives": [
+    "Identificar vulnerabilidades de SQL Injection",
+    "Compreender técnicas de bypass de autenticação",
+    "Aprender sobre a importância de prepared statements"
+  ],
+  "writeup_url": null,
+  "created_at": "2024-10-26T00:00:00Z"
+}

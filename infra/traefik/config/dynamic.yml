@@ -1,0 +1,40 @@
+# Traefik dynamic configuration
+http:
+  routers:
+    # API Backend - high priority
+    ctf-backend:
+      rule: "PathPrefix(`/api`)"
+      service: ctf-backend
+      entryPoints:
+        - web
+      priority: 100
+
+    # Main CTF Platform - catch all
+    ctf-frontend:
+      rule: "PathPrefix(`/`)"
+      service: ctf-frontend
+      entryPoints:
+        - web
+      priority: 50
+
+    # Traefik Dashboard
+    traefik-dashboard:
+      rule: "PathPrefix(`/dashboard`) || PathPrefix(`/api`) && Headers(`User-Agent`, `.*traefik.*`)"
+      service: api@internal
+      entryPoints:
+        - web
+      priority: 200
+
+  services:
+    ctf-frontend:
+      loadBalancer:
+        servers:
+          - url: "http://frontend:3000"
+
+    ctf-backend:
+      loadBalancer:
+        servers:
+          - url: "http://backend:5000"
+
+# Challenge instances will be added here dynamically
+# by the backend when containers are started

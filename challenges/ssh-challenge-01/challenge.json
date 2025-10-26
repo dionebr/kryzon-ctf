@@ -1,0 +1,27 @@
+{
+  "name": "Nethermind",
+  "slug": "nethermind", 
+  "difficulty": "easy",
+  "category": "system",
+  "points": 150,
+  "description": "Um servidor SSH foi configurado com credenciais fracas. O administrador do sistema acredita que sua senha é segura, mas será que realmente é?",
+  "image_tag": "kryzon/nethermind:latest",
+  "port": 22,
+  "flag": "KRYZON{w34k_ssh_cr3d3nt14ls_pwn3d}",
+  "author": "Kryzon Team",
+  "hints": [
+    "Wordlists comuns podem ser úteis para ataques de força bruta",
+    "Existem 3 usuários disponíveis: user, admin e guest", 
+    "A flag está localizada em /home/user/flag.txt",
+    "Ferramentas como hydra podem acelerar o processo"
+  ],
+  "technologies": ["Linux", "OpenSSH", "Bash"],
+  "learning_objectives": [
+    "Praticar técnicas de brute force SSH",
+    "Compreender a importância de senhas fortes",
+    "Aprender sobre ferramentas de quebra de senha",
+    "Exploração básica de sistemas Linux"
+  ],
+  "writeup_url": null,
+  "created_at": "2024-10-26T00:00:00Z"
+}
